@@ -16,6 +16,7 @@ public class seminar_2 {
         System.out.printf("Введите значение искомого треугольного числа: ");
         int n = s.nextInt();
         var res = ((0.5)*n)*(n+1);
+        s.close();
         // System.out.println(res);
 
         try {
@@ -25,7 +26,7 @@ public class seminar_2 {
             PrintWriter pw = new PrintWriter(f);
             pw.println("Значение " + n + "-го по порядку треугольного числа равно: " + res);
             pw.close();
-            System.out.println("Результат записан в файл triang_num.txt");
+            System.out.println("Результат записан в файл 'triang_num.txt'");
         } catch (IOException e) {
             System.out.print("Error: " + e);
         }
