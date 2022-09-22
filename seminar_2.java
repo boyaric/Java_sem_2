@@ -1,12 +1,10 @@
 // Семинар 2. + Написать программу вычисления n-ого треугольного числа.
 
-import java.io.BufferedReader;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
 public class seminar_2 {
 
     /**
@@ -15,7 +13,7 @@ public class seminar_2 {
     public static void main(String[] args) {
         System.out.print("\033[H\033[J"); // сlear console
         Scanner s = new Scanner(System.in);
-        System.out.printf("Введите число n - длину последовательности треугольных чисел: ");
+        System.out.printf("Введите значение искомого треугольного числа: ");
         int n = s.nextInt();
         var res = ((0.5)*n)*(n+1);
         // System.out.println(res);
