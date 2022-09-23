@@ -17,7 +17,6 @@ public class seminar_2 {
         int n = s.nextInt();
         var res = ((0.5)*n)*(n+1);
         s.close();
-        // System.out.println(res);
 
         try {
             File f = new File("triang_num.txt"); // create file
