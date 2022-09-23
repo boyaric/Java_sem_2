@@ -1,6 +1,5 @@
 // Семинар 2. + Написать программу вычисления n-ого треугольного числа.
 
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
