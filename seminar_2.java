@@ -1,32 +1,34 @@
-// Семинар 2. + Написать программу вычисления n-ого треугольного числа.
+// Семинар 2. + Написать программу, показывающую последовательность действий для игры “Ханойская башня”.
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 public class seminar_2 {
 
     /**
      * @param args
+     * @throws IOException
      */
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
         System.out.print("\033[H\033[J"); // сlear console
         Scanner s = new Scanner(System.in);
-        System.out.printf("Введите значение искомого треугольного числа: ");
+        System.out.printf("Введите колличество колец: ");
         int n = s.nextInt();
-        var res = ((0.5)*n)*(n+1);
         s.close();
+        System.out.println();
+        System.out.println("Перекладывайте кольца в следующем порядке:");
+        hanoi_tower('1', '2', '3', n);
+    }
 
-        try {
-            File f = new File("triang_num.txt"); // create file
-            if (!f.exists());
-            f.createNewFile();
-            PrintWriter pw = new PrintWriter(f);
-            pw.println("Значение " + n + "-го по порядку треугольного числа равно: " + res);
-            pw.close();
-            System.out.println("Результат записан в файл 'triang_num.txt'");
-        } catch (IOException e) {
-            System.out.print("Error: " + e);
+    public static void hanoi_tower(char a, char b, char c, int n) {
+        if (n == 1) {
+            System.out.println(String.format("%s -> %s", a, b));
+        } else {
+            hanoi_tower(a, c, b, n - 1);
+            System.out.println(String.format("%s -> %s", a, b));
+            hanoi_tower(c, b, a, n - 1);
         }
     }
+
 }
+
